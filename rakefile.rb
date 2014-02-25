@@ -1,5 +1,5 @@
 desc "default task. Lint, test etc"
-task :default => [:lint, :test] do
+task :default => [:lint, :start_site, :test, :stop_site] do
 	puts "Finished running rake ^-^"
 end
 
@@ -19,4 +19,15 @@ task :test do
 end
 
 
+pid = 0
+task :start_site do
+	puts "starting site..."
+	pid = Process.spawn "ruby src/homepage.rb"
+	puts "site started!"
+end
 
+task :stop_site do
+	puts "Stopping site..."
+	Process.kill("SIGTERM", pid)
+	puts "Site stopped!"
+end
