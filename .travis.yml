@@ -1,6 +1,11 @@
 language: ruby
 rvm:
-    - 2.0.0
+- 2.0.0
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+deploy:
+  provider: heroku
+  api_key:
+    secure: Lol4FX54aoBhf6ip/DCtXIFdnRCcNAWAP3s6NXwpL0WNl7rpM/YH6UjAIvU1aRIWLzPD7cNnqpsie2rIG/3pxlF66kiEM2zUT41BYPdFP3RD0D5HZmsdlov40fUGustYjE3y5q6D8yLfcEWSaYeWv3oc765g5VSpeOUWcra36bI=
+  strategy: git
