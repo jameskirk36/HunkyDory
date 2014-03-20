@@ -1,10 +1,20 @@
-require 'selenium-webdriver'
+require 'capybara/rspec'
+require 'sinatra'
 
-describe "Homepage" do
-	it "should hit the homepage and title should say hunky dory chocolates" do
-		driver = Selenium::WebDriver.for :firefox
-		driver.navigate.to "http://localhost:4567"
-		driver.title.should eq("hunky dory")
-		driver.quit
+Capybara.app = Sinatra::Application
+
+RSpec.configure do |config|
+  config.include Capybara::DSL
+end
+
+feature "Homepage" do
+
+	scenario "hit the homepage and title should say hunky dory chocolates" do
+		visit '/'
+		has_title? "hunky dory"
 	end 
+	scenario "hit the homepage and see 'Welcome to Hunky Dory Chocolates'" do
+		visit '/'
+		has_text? "Welcome to Hunky Dory Chocolates" 
+	end
 end
