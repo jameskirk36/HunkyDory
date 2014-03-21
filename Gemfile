@@ -1,6 +1,8 @@
 # A sample Gemfile
 source "https://rubygems.org"
 # gem "rails"
+gem "mustache", ">=0.99"
+gem "sinatra-mustache", ">=0.3.1"
 gem "rake", ">=10.1"
 gem "rspec", ">=2.14"
 gem "selenium-webdriver", "~> 2.38.0"
