@@ -1,7 +1,7 @@
 require 'capybara/rspec'
-require 'sinatra'
+require './src/homepage.rb'
 
-Capybara.app = Sinatra::Application
+Capybara.app = HunkyDoryApp
 
 RSpec.configure do |config|
   config.include Capybara::DSL
@@ -10,11 +10,11 @@ end
 feature "Homepage" do
 
 	scenario "hit the homepage and title should say hunky dory chocolates" do
-		visit '/'
-		has_title? "hunky dory"
+		visit "/"
+		page.should have_title "Hunky Dory Chocolates"
 	end 
 	scenario "hit the homepage and see 'Welcome to Hunky Dory Chocolates'" do
-		visit '/'
-		has_text? "Welcome to Hunky Dory Chocolates" 
+		visit "/"
+		page.should have_content "Welcome to Hunky Dory Chocolates" 
 	end
 end
