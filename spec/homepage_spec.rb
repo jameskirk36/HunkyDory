@@ -1,5 +1,5 @@
 require 'capybara/rspec'
-require './src/homepage.rb'
+require './src/app.rb'
 
 Capybara.app = HunkyDoryApp
 
