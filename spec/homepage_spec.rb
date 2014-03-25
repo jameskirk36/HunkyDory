@@ -12,9 +12,6 @@ feature "Homepage" do
 	scenario "hit the homepage and title should say hunky dory chocolates" do
 		visit "/"
 		page.should have_title "Hunky Dory Chocolates"
-	end 
-	scenario "hit the homepage and see 'Welcome to Hunky Dory Chocolates'" do
-		visit "/"
-		page.should have_content "Welcome to Hunky Dory Chocolates" 
+		page.should have_content "Hunky Dory Chocolates.  Coming soon..." 
 	end
 end
