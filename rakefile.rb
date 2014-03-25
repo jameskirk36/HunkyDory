@@ -22,7 +22,7 @@ end
 
 task :start_site do
 	puts "starting site..."
-	@sinatra_pid = Process.spawn "ruby src/homepage.rb"
+	@sinatra_pid = Process.spawn "ruby src/run_app.rb"
 	puts "site started!"
 end
 

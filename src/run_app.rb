@@ -1,2 +1,2 @@
 require './src/app.rb'
-run HunkyDoryApp
+HunkyDoryApp.run!
