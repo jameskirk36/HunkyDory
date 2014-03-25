@@ -12,6 +12,7 @@ feature "Homepage" do
 	scenario "hit the homepage and title should say hunky dory chocolates" do
 		visit "/"
 		page.should have_title "Hunky Dory Chocolates"
-		page.should have_content "Hunky Dory Chocolates.  Coming soon..." 
+		page.should have_content "Coming soon..." 
+		page.should have_xpath "//img[@src='images/logo.png']"
 	end
 end
