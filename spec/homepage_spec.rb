@@ -15,4 +15,10 @@ feature "Homepage" do
 		page.should have_content "Coming soon..." 
 		page.should have_xpath "//img[@src='images/logo.png']"
 	end
+
+	scenario "hit the homepage and title should have correct style" do
+		visit "/"
+		page.should have_css ".logo"
+	end
+	
 end
